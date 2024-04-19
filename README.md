@@ -34,10 +34,9 @@ The output predictions could be found at "./output"
 
 2. Calculate metrics using the following code.
 
-   ```shell
-   >>> python eval.py
-   ```
-
+```shell
+>>> python calMetric.py
+```
 
 
 ## Citation
