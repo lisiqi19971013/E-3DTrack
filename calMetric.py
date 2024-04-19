@@ -32,7 +32,7 @@ def metric_3d(pred, gt, err_thr=[50., 100., 200.]):
 
 
 if __name__ == '__main__':
-    root_path = r'./test/output_rate4/'
+    root_path = r'./test/output/'
 
     err_thr = [100, 150, 200]
     err_keys = ['fa_'+str(x) for x in err_thr] + ['fs_'+str(x) for x in err_thr] + ['mse']
@@ -44,7 +44,7 @@ if __name__ == '__main__':
     for k in err_keys:
         err_avg_total[k] = []
 
-    for seq_name in ['car_5+shape_5', 'toy_5', 'shape_3+shape_4', 'shape_6+shape_7', 'airplane_1', 'rocket', 'shape_5+shape_3', 'airplane_3', 'toy_1', 'car_4']:
+    for seq_name in os.listdir(root_path):
         err_avg_seq = {}
         for k in err_keys:
             err_avg_seq[k] = []
@@ -85,10 +85,10 @@ if __name__ == '__main__':
     print('Total')
     print(err_avg_total)
 
-    with open(os.path.join(root_path, 'res.txt'), 'w') as f:
-        for k, v in seq_dict.items():
-            f.writelines(f"mse:{v['mse']:.4f}\tfa_100:{v['fa_100']:.4f}\tfa_150:{v['fa_150']:.4f}\tfa_200:{v['fa_200']:.4f}\t"
-                         f"fs_100:{v['fs_100']:.4f}\tfs_150:{v['fs_150']:.4f}\tfs_200:{v['fs_200']:.4f}\tSeq: {k}\n")
-        f.writelines('\n')
-        f.writelines(f"mse:{err_avg_total['mse']:.4f}\tfa_100:{err_avg_total['fa_100']:.4f}\tfa_150:{err_avg_total['fa_150']:.4f}\tfa_200:{err_avg_total['fa_200']:.4f}\t"
-                     f"fs_100:{err_avg_total['fs_100']:.4f}\tfs_150:{err_avg_total['fs_150']:.4f}\tfs_200:{err_avg_total['fs_200']:.4f}\tTotal")
+    # with open(os.path.join(root_path, 'res.txt'), 'w') as f:
+    #     for k, v in seq_dict.items():
+    #         f.writelines(f"mse:{v['mse']:.4f}\tfa_100:{v['fa_100']:.4f}\tfa_150:{v['fa_150']:.4f}\tfa_200:{v['fa_200']:.4f}\t"
+    #                      f"fs_100:{v['fs_100']:.4f}\tfs_150:{v['fs_150']:.4f}\tfs_200:{v['fs_200']:.4f}\tSeq: {k}\n")
+    #     f.writelines('\n')
+    #     f.writelines(f"mse:{err_avg_total['mse']:.4f}\tfa_100:{err_avg_total['fa_100']:.4f}\tfa_150:{err_avg_total['fa_150']:.4f}\tfa_200:{err_avg_total['fa_200']:.4f}\t"
+    #                  f"fs_100:{err_avg_total['fs_100']:.4f}\tfs_150:{err_avg_total['fs_150']:.4f}\tfs_200:{err_avg_total['fs_200']:.4f}\tTotal")
