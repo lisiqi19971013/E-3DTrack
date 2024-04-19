@@ -12,6 +12,7 @@ if __name__ == '__main__':
     import torch
 
     ckpt_path = './ckpt.pth'
+    data_folder = './data'
 
     model = TrackerNetEval(feature_dim=384, hgnn=True)
     model_info = torch.load(ckpt_path)
@@ -19,14 +20,14 @@ if __name__ == '__main__':
     model = model.cuda()
     print(f"Loaded from: {ckpt_path}")
 
-    testDataset = getDataset(data_folder='./data', train=False)
+    testDataset = getDataset(data_folder=data_folder, train=False)
 
     with torch.no_grad():
         model.eval()
         for n, td in enumerate(testDataset):
             DL = DataLoader(td, 1)
             model.reset()
-            opFolder = os.path.join('./test/output', td.sequence_name)
+            opFolder = os.path.join('./output', td.sequence_name)
             os.makedirs(opFolder, exist_ok=True)
 
             for i, (ts, data, gt) in enumerate(DL):

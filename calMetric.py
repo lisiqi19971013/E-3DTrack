@@ -32,7 +32,7 @@ def metric_3d(pred, gt, err_thr=[50., 100., 200.]):
 
 
 if __name__ == '__main__':
-    root_path = r'./test/output/'
+    root_path = r'./output/'
 
     err_thr = [100, 150, 200]
     err_keys = ['fa_'+str(x) for x in err_thr] + ['fs_'+str(x) for x in err_thr] + ['mse']
