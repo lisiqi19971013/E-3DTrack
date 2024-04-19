@@ -1,9 +1,8 @@
 # E-3DTrack
-This repository is for the **CVPR 2024** paper *"3D Feature Tracking via Event Camera"*. This work is inspired by the great success of the "Data-Driven Feature Tracking for Event Cameras" (CVPR 2023 Best Paper Candidate) and extends it to 3D.
+This repository is for the **CVPR 2024** paper *"3D Feature Tracking via Event Camera"*. This work is inspired by the great success of "Data-Driven Feature Tracking for Event Cameras" (CVPR 2023 Best Paper Candidate) and extends it to 3D.
 
 ## Requirements
-
-1. Python 3 with the following packages installed:
+1. Python 3.8 with the following packages installed:
    * einops==0.4.1
    * kornia==0.6.7
    * opencv-python==4.6.0.66
@@ -13,15 +12,11 @@ This repository is for the **CVPR 2024** paper *"3D Feature Tracking via Event C
    - **CUDA** enabled **GPUs** are required for training. We train our code with CUDA 11.1 V11.1.105 on A100 GPUs and test on NVIDIA 3090 GPUs.
 
 
-
 ## Data preparing
-
 1. Our E-3DTrack dataset could be downloaded from https://github.com/lisiqi19971013/event-based-datasets. 
 2. Download the pre-trained model from https://drive.google.com/file/d/1Gx0zhIeciHGEqrRryPmAC-mqoNO1wuMQ/view?usp=sharing or from https://pan.baidu.com/s/1ONvkUyk2cqWM2XR_XwaKeg (extract code: 2024).
-   
 
 ## Evaluation
-
 1. Modify the variables "**ckpt_path**" and "**data_folder**" in the file "**eval.py**" accordingly.
 
 Run the following code to generate output results.
@@ -40,7 +35,6 @@ The output predictions could be found at "./output"
 
 
 ## Citation
-
 ```bib
 @inproceedings{e3dtrack,
     title={3D Feature Tracking via Event Camera}, 
