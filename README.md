@@ -22,7 +22,7 @@ This repository is for the **CVPR 2024** paper *"3D Feature Tracking via Event C
 
 ## Evaluation
 
-1. Modified the variables "**ckpt_path**" and "**data_folder**" in the file "**eval.py**" accordingly.
+1. Modify the variables "**ckpt_path**" and "**data_folder**" in the file "**eval.py**" accordingly.
 
 Run the following code to generate output results.
 
