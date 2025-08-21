@@ -13,10 +13,9 @@ This repository is for the **CVPR 2024** paper *"3D Feature Tracking via Event C
 
 
 ## Data preparing
-1. Our E-3DTrack dataset could be downloaded from https://github.com/lisiqi19971013/event-based-datasets. Our dataset contains multi-modal visual data for 3D visual perception.
+1. Our E-3DTrack dataset could be downloaded from https://github.com/lisiqi19971013/event-based-datasets.
 2. Download the pre-trained model from https://drive.google.com/file/d/1Gx0zhIeciHGEqrRryPmAC-mqoNO1wuMQ/view?usp=sharing or from https://pan.baidu.com/s/1ONvkUyk2cqWM2XR_XwaKeg (extract code: 2024).
 
-> Acknowledgment. The construction of this dataset is supported by CCF-Tencent Open Research Fund.
 
 ## Evaluation
 1. Modify the variables "**ckpt_path**" and "**data_folder**" in the file "**eval.py**" accordingly.
